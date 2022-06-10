@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: patraverpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: patraverpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: patraverpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: patraverpipelinesjavascriptdocker 
+          image: user02acr.azurecr.io/patraverpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
